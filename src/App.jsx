@@ -25,7 +25,7 @@ export default function App() {
   return (
     <div
       style={{
-        backgroundColor: "var(--color-background-tertiary)",
+        background: "transparent",
         minHeight: "100vh",
       }}
     >
@@ -43,22 +43,20 @@ export default function App() {
         />
       )}
 
-      <div style={{ padding: "2rem", maxWidth: "1200px", margin: "0 auto" }}>
-        {activeTab === "destinations" ? (
-          <DestinationsGrid
-            destinations={DESTINATIONS}
-            searchQuery={searchQuery}
-            favorites={favorites}
-            onToggleFavorite={toggleFavorite}
-          />
-        ) : (
-          <FavoritesView
-            destinations={DESTINATIONS}
-            favorites={favorites}
-            onToggleFavorite={toggleFavorite}
-          />
-        )}
-      </div>
+      {activeTab === "destinations" ? (
+        <DestinationsGrid
+          destinations={DESTINATIONS}
+          searchQuery={searchQuery}
+          favorites={favorites}
+          onToggleFavorite={toggleFavorite}
+        />
+      ) : (
+        <FavoritesView
+          destinations={DESTINATIONS}
+          favorites={favorites}
+          onToggleFavorite={toggleFavorite}
+        />
+      )}
 
       <Footer />
     </div>

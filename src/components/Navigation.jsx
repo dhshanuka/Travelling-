@@ -18,15 +18,15 @@ export default function Navigation({
         position: "sticky",
         top: 0,
         zIndex: 100,
-        backgroundColor: "rgba(255, 255, 255, 0.8)",
+        backgroundColor: "rgba(255, 255, 255, 0.98)",
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
-        borderBottom: "1px solid rgba(226, 232, 240, 0.6)",
+        borderBottom: "1px solid #e2e8f0",
         padding: "1rem 2rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.05)",
+        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
       }}
     >
       <div
@@ -89,29 +89,29 @@ export default function Navigation({
                 gap: "0.5rem",
                 padding: "0.75rem 1.25rem",
                 borderRadius: "12px",
-                border: "none",
+                border: isActive ? "none" : "1px solid #cbd5e1",
                 cursor: "pointer",
                 fontSize: "15px",
-                fontWeight: "500",
+                fontWeight: "600",
                 transition: "all 0.2s ease",
-                backgroundColor: isActive
+                background: isActive
                   ? "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
-                  : "transparent",
-                color: isActive ? "white" : "#64748b",
+                  : "#f8fafc",
+                color: isActive ? "white" : "#334155",
                 boxShadow: isActive
                   ? "0 4px 15px rgba(99, 102, 241, 0.4)"
-                  : "none",
+                  : "0 1px 3px rgba(0,0,0,0.05)",
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.backgroundColor = "rgba(99, 102, 241, 0.1)";
-                  e.currentTarget.style.color = "#6366f1";
+                  e.currentTarget.style.background = "#e2e8f0";
+                  e.currentTarget.style.borderColor = "#6366f1";
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.color = "#64748b";
+                  e.currentTarget.style.background = "#f8fafc";
+                  e.currentTarget.style.borderColor = "#cbd5e1";
                 }
               }}
             >
@@ -128,22 +128,23 @@ export default function Navigation({
             gap: "0.5rem",
             padding: "0.75rem 1.25rem",
             borderRadius: "12px",
-            border: "1px solid #e2e8f0",
+            border: "1px solid #cbd5e1",
             cursor: "pointer",
             fontSize: "15px",
-            fontWeight: "500",
-            backgroundColor: "transparent",
-            color: "#64748b",
+            fontWeight: "600",
+            backgroundColor: "#f8fafc",
+            color: "#334155",
             marginLeft: "0.5rem",
             transition: "all 0.2s ease",
+            boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.borderColor = "#6366f1";
-            e.currentTarget.style.color = "#6366f1";
+            e.currentTarget.style.background = "#e2e8f0";
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = "#e2e8f0";
-            e.currentTarget.style.color = "#64748b";
+            e.currentTarget.style.borderColor = "#cbd5e1";
+            e.currentTarget.style.background = "#f8fafc";
           }}
         >
           <HelpCircle size={18} />
