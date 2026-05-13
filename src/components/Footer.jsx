@@ -5,11 +5,15 @@ export default function Footer() {
   return (
     <footer
       style={{
-        backgroundColor: "#1e293b",
+        background: "linear-gradient(180deg, #1e293b 0%, #0f172a 100%)",
         padding: "4rem 2rem 2rem",
         marginTop: "4rem",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
+      <div style={{ position: "absolute", top: "-100px", right: "-100px", width: "300px", height: "300px", borderRadius: "50%", background: "radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%)", pointerEvents: "none" }} />
+      <div style={{ position: "absolute", bottom: "-50px", left: "-50px", width: "200px", height: "200px", borderRadius: "50%", background: "radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%)", pointerEvents: "none" }} />
       <div
         style={{
           maxWidth: "1200px",

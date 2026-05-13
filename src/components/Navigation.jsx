@@ -21,12 +21,15 @@ export default function Navigation({
         position: "sticky",
         top: 0,
         zIndex: 100,
-        background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+        background: "rgba(255, 255, 255, 0.9)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
         padding: "1rem 2rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        boxShadow: "0 4px 20px rgba(99, 102, 241, 0.3)",
+        boxShadow: "0 4px 30px rgba(0, 0, 0, 0.08)",
+        borderBottom: "1px solid rgba(99, 102, 241, 0.1)",
       }}
     >
       <div
@@ -51,14 +54,16 @@ export default function Navigation({
         >
           <Plane
             size={22}
-            style={{ color: "white", transform: "rotate(-45deg)" }}
+            style={{ color: "#6366f1", transform: "rotate(-45deg)" }}
           />
         </div>
         <span
           style={{
             fontSize: "22px",
             fontWeight: "700",
-            color: "white",
+            background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
           }}
         >
           WanderlustHub
@@ -86,27 +91,29 @@ export default function Navigation({
                 gap: "0.5rem",
                 padding: "0.75rem 1.25rem",
                 borderRadius: "12px",
-                border: isActive ? "none" : "1px solid rgba(255,255,255,0.3)",
+                border: isActive ? "none" : "1px solid #e2e8f0",
                 cursor: "pointer",
                 fontSize: "15px",
                 fontWeight: "600",
                 transition: "all 0.2s ease",
                 background: isActive
-                  ? "rgba(255,255,255,0.2)"
-                  : "transparent",
-                color: "white",
+                  ? "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
+                  : "white",
+                color: isActive ? "white" : "#475569",
                 boxShadow: isActive
-                  ? "0 4px 15px rgba(0,0,0,0.2)"
-                  : "none",
+                  ? "0 4px 15px rgba(99, 102, 241, 0.4)"
+                  : "0 2px 8px rgba(0, 0, 0, 0.04)",
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.15)";
+                  e.currentTarget.style.background = "#f1f5f9";
+                  e.currentTarget.style.borderColor = "#6366f1";
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.background = "white";
+                  e.currentTarget.style.borderColor = "#e2e8f0";
                 }
               }}
             >

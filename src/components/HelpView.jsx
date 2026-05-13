@@ -47,7 +47,7 @@ export default function HelpView() {
   ];
 
   return (
-    <div style={{ padding: "2rem", maxWidth: "1200px", margin: "2rem auto", background: "white", borderRadius: "16px" }}>
+    <div style={{ padding: "2rem", maxWidth: "1200px", margin: "2rem auto", background: "rgba(255, 255, 255, 0.7)", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)", borderRadius: "24px", border: "1px solid rgba(255, 255, 255, 0.5)" }}>
       <div style={{ marginBottom: "3rem" }}>
         <h2
           style={{

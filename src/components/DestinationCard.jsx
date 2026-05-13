@@ -21,26 +21,26 @@ export default function DestinationCard({
   return (
     <div
       style={{
-        backgroundColor: "white",
-        borderRadius: "20px",
+        background: "rgba(255, 255, 255, 0.85)",
+        backdropFilter: "blur(10px)",
+        WebkitBackdropFilter: "blur(10px)",
+        borderRadius: "24px",
         overflow: "hidden",
-        border: "1px solid #e5e7eb",
-        transition: "all 0.3s ease",
+        border: "1px solid rgba(255, 255, 255, 0.6)",
+        transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
         cursor: "pointer",
-        boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)",
+        boxShadow: "0 8px 32px rgba(0, 0, 0, 0.08)",
         position: "relative",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow =
-          "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)";
-        e.currentTarget.style.transform = "translateY(-8px)";
-        e.currentTarget.style.borderColor = "#6366f1";
+        e.currentTarget.style.boxShadow = "0 24px 48px rgba(99, 102, 241, 0.2)";
+        e.currentTarget.style.transform = "translateY(-12px)";
+        e.currentTarget.style.borderColor = "rgba(99, 102, 241, 0.5)";
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow =
-          "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)";
+        e.currentTarget.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.08)";
         e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.borderColor = "#e5e7eb";
+        e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.6)";
       }}
     >
       <div
