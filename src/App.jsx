@@ -4,6 +4,8 @@ import HeroSection from "./components/HeroSection";
 import DestinationsGrid from "./components/DestinationGrid";
 import FavoritesView from "./components/FavouritesView";
 import HelpView from "./components/HelpView";
+import ContactView from "./components/ContactView";
+import AboutView from "./components/AboutView";
 import Footer from "./components/Footer";
 import { DESTINATIONS } from "./data/destinationsData";
 
@@ -61,7 +63,11 @@ export default function App() {
         />
       )}
 
+      {activeTab === "about" && <AboutView />}
+
       {activeTab === "help" && <HelpView />}
+
+      {activeTab === "contact" && <ContactView />}
 
       <Footer />
     </div>

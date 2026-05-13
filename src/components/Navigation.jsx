@@ -1,5 +1,5 @@
 import React from "react";
-import { Plane, MapPin, Heart, HelpCircle, Menu, X } from "lucide-react";
+import { Plane, MapPin, Heart, HelpCircle, Menu, X, Phone, Globe } from "lucide-react";
 
 export default function Navigation({
   activeTab,
@@ -10,7 +10,9 @@ export default function Navigation({
   const navItems = [
     { id: "destinations", label: "Explore", icon: MapPin },
     { id: "favorites", label: "Favorites", icon: Heart },
+    { id: "about", label: "About", icon: Globe },
     { id: "help", label: "Help", icon: HelpCircle },
+    { id: "contact", label: "Contact", icon: Phone },
   ];
 
   return (
@@ -19,15 +21,12 @@ export default function Navigation({
         position: "sticky",
         top: 0,
         zIndex: 100,
-        backgroundColor: "rgba(255, 255, 255, 0.98)",
-        backdropFilter: "blur(20px)",
-        WebkitBackdropFilter: "blur(20px)",
-        borderBottom: "1px solid #e2e8f0",
+        background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
         padding: "1rem 2rem",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
+        boxShadow: "0 4px 20px rgba(99, 102, 241, 0.3)",
       }}
     >
       <div
@@ -59,10 +58,7 @@ export default function Navigation({
           style={{
             fontSize: "22px",
             fontWeight: "700",
-            background: "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)",
-            WebkitBackgroundClip: "text",
-            WebkitTextFillColor: "transparent",
-            backgroundClip: "text",
+            color: "white",
           }}
         >
           WanderlustHub
@@ -90,29 +86,27 @@ export default function Navigation({
                 gap: "0.5rem",
                 padding: "0.75rem 1.25rem",
                 borderRadius: "12px",
-                border: isActive ? "none" : "1px solid #cbd5e1",
+                border: isActive ? "none" : "1px solid rgba(255,255,255,0.3)",
                 cursor: "pointer",
                 fontSize: "15px",
                 fontWeight: "600",
                 transition: "all 0.2s ease",
                 background: isActive
-                  ? "linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)"
-                  : "#f8fafc",
-                color: isActive ? "white" : "#334155",
+                  ? "rgba(255,255,255,0.2)"
+                  : "transparent",
+                color: "white",
                 boxShadow: isActive
-                  ? "0 4px 15px rgba(99, 102, 241, 0.4)"
-                  : "0 1px 3px rgba(0,0,0,0.05)",
+                  ? "0 4px 15px rgba(0,0,0,0.2)"
+                  : "none",
               }}
               onMouseEnter={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.background = "#e2e8f0";
-                  e.currentTarget.style.borderColor = "#6366f1";
+                  e.currentTarget.style.background = "rgba(255,255,255,0.15)";
                 }
               }}
               onMouseLeave={(e) => {
                 if (!isActive) {
-                  e.currentTarget.style.background = "#f8fafc";
-                  e.currentTarget.style.borderColor = "#cbd5e1";
+                  e.currentTarget.style.background = "transparent";
                 }
               }}
             >
