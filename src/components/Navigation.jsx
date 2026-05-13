@@ -10,6 +10,7 @@ export default function Navigation({
   const navItems = [
     { id: "destinations", label: "Explore", icon: MapPin },
     { id: "favorites", label: "Favorites", icon: Heart },
+    { id: "help", label: "Help", icon: HelpCircle },
   ];
 
   return (
@@ -121,36 +122,7 @@ export default function Navigation({
           );
         })}
 
-        <button
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "0.5rem",
-            padding: "0.75rem 1.25rem",
-            borderRadius: "12px",
-            border: "1px solid #cbd5e1",
-            cursor: "pointer",
-            fontSize: "15px",
-            fontWeight: "600",
-            backgroundColor: "#f8fafc",
-            color: "#334155",
-            marginLeft: "0.5rem",
-            transition: "all 0.2s ease",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.05)",
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.borderColor = "#6366f1";
-            e.currentTarget.style.background = "#e2e8f0";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.borderColor = "#cbd5e1";
-            e.currentTarget.style.background = "#f8fafc";
-          }}
-        >
-          <HelpCircle size={18} />
-          Help
-        </button>
-      </div>
+        </div>
 
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}

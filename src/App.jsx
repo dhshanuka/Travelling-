@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import HeroSection from "./components/HeroSection";
 import DestinationsGrid from "./components/DestinationGrid";
 import FavoritesView from "./components/FavouritesView";
+import HelpView from "./components/HelpView";
 import Footer from "./components/Footer";
 import { DESTINATIONS } from "./data/destinationsData";
 
@@ -43,20 +44,24 @@ export default function App() {
         />
       )}
 
-      {activeTab === "destinations" ? (
+      {activeTab === "destinations" && (
         <DestinationsGrid
           destinations={DESTINATIONS}
           searchQuery={searchQuery}
           favorites={favorites}
           onToggleFavorite={toggleFavorite}
         />
-      ) : (
+      )}
+
+      {activeTab === "favorites" && (
         <FavoritesView
           destinations={DESTINATIONS}
           favorites={favorites}
           onToggleFavorite={toggleFavorite}
         />
       )}
+
+      {activeTab === "help" && <HelpView />}
 
       <Footer />
     </div>
